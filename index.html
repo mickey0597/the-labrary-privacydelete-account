@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>حذف الحساب والبيانات | تطبيق المكتبة</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #1E88E5;
+      --bg: #0B1120;
+      --card-bg: #1E293B;
+      --text: #F8FAFC;
+      --text-muted: #94A3B8;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
+    body { background-color: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.6; }
+    .container { max-width: 750px; margin: 0 auto; }
+    .header { text-align: center; margin-bottom: 35px; }
+    .logo { font-size: 45px; margin-bottom: 10px; }
+    h1 { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+    p.subtitle { color: var(--text-muted); font-size: 14px; }
+    .card { background: var(--card-bg); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    .card h2 { font-size: 17px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #fff; }
+    .card p, .card li { font-size: 13.5px; color: var(--text-muted); }
+    ul { list-style: none; padding-right: 0; }
+    li { position: relative; padding-right: 22px; margin-bottom: 8px; }
+    li::before { content: "✓"; position: absolute; right: 0; color: var(--primary); font-weight: bold; }
+    .btn-mail { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 12px; font-weight: 700; font-size: 13px; margin-top: 12px; transition: 0.3s; }
+    .btn-mail:hover { background: #1565C0; }
+    .badge-warn { background: rgba(239, 68, 68, 0.15); color: #EF4444; padding: 3px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 8px; }
+    .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <div class="logo">📚</div>
+      <h1>تطبيق المكتبة (The Library)</h1>
+      <p class="subtitle">بوابة طلب حذف الحساب والبيانات الشخصية</p>
+    </div>
+
+    <div class="card">
+      <span class="badge-warn">الخيار الأول</span>
+      <h2>📱 الحذف الفوري من داخل التطبيق</h2>
+      <p>إذا كان التطبيق مثبتاً على هاتفك، يمكنك حذف حسابك في ثوانٍ معدودة:</p>
+      <br>
+      <ul>
+        <li>افتح التطبيق وسجل دخولك.</li>
+        <li>انتقل إلى شاشة <strong>(الملف الشخصي / حسابي)</strong>.</li>
+        <li>مرر لأسفل الشاشة واضغط على <strong>"حذف الحساب نهائياً"</strong>.</li>
+        <li>أكد الطلب، وسيتم مسح كافة بياناتك ورواياتك فوراً من السيرفر.</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <span class="badge-warn">الخيار الثاني</span>
+      <h2>📧 الحذف في حال قمت بإلغاء تثبيت التطبيق</h2>
+      <p>إذا حذفت التطبيق من جهازك، أرسل لنا رسالة من نفس البريد الإلكتروني المسجل به داخل التطبيق، وسيقوم فريق الدعم بحذف حسابك بالكامل خلال 48 ساعة:</p>
+      <a href="michaelmelad0597@gmail.com?subject=طلب حذف حسابي من تطبيق المكتبة" class="btn-mail">إرسال طلب الحذف عبر البريد ✉️</a>
+    </div>
+
+    <div class="card">
+      <h2>🗑️ البيانات التي يتم حذفها نهائياً:</h2>
+      <ul>
+        <li>بيانات الملف الشخصي (الاسم، البريد الإلكتروني، الصورة الشخصية).</li>
+        <li>جميع الروايات المنشورة، المسودات، والفصول بالكامل.</li>
+        <li>رصيد المفاتيح الذهبية وسجل القراءة والشارات التقديرية.</li>
+        <li>التعليقات والمفضلات والإشعارات الخاصة بالحساب.</li>
+      </ul>
+    </div>
+
+    <div class="footer">
+      جميع الحقوق محفوظة © تطبيق المكتبة 2026
+    </div>
+  </div>
+</body>
+</html>
