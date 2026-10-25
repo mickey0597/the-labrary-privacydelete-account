@@ -26,8 +26,13 @@
     ul { list-style: none; padding-right: 0; }
     li { position: relative; padding-right: 22px; margin-bottom: 8px; }
     li::before { content: "✓"; position: absolute; right: 0; color: var(--primary); font-weight: bold; }
-    .btn-mail { display: inline-block; background: var(--primary); color: #fff; text-decoration: none; padding: 10px 22px; border-radius: 12px; font-weight: 700; font-size: 13px; margin-top: 12px; transition: 0.3s; }
-    .btn-mail:hover { background: #1565C0; }
+    .email-box { background: rgba(0,0,0,0.25); padding: 14px; border-radius: 12px; margin-top: 14px; border: 1px dashed rgba(255,255,255,0.15); display: flex; flex-direction: column; gap: 10px; }
+    .email-text { font-family: monospace; color: #38BDF8; font-size: 15px; direction: ltr; text-align: right; }
+    .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
+    .btn-action { display: inline-flex; align-items: center; gap: 6px; background: var(--primary); color: #fff; border: none; text-decoration: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; transition: 0.2s; }
+    .btn-action:hover { background: #1565C0; }
+    .btn-copy { background: #334155; }
+    .btn-copy:hover { background: #475569; }
     .badge-warn { background: rgba(239, 68, 68, 0.15); color: #EF4444; padding: 3px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 8px; }
     .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; }
   </style>
@@ -57,7 +62,17 @@
       <span class="badge-warn">الخيار الثاني</span>
       <h2>📧 الحذف في حال قمت بإلغاء تثبيت التطبيق</h2>
       <p>إذا حذفت التطبيق من جهازك، أرسل لنا رسالة من نفس البريد الإلكتروني المسجل به داخل التطبيق، وسيقوم فريق الدعم بحذف حسابك بالكامل خلال 48 ساعة:</p>
-      <a href="michaelmelad0597@gmail.com?subject=طلب حذف حسابي من تطبيق المكتبة" class="btn-mail">إرسال طلب الحذف عبر البريد ✉️</a>
+      
+      <div class="email-box">
+        <span style="font-size: 12px; color: var(--text-muted);">البريد الإلكتروني المخصص للدعم وحذف البيانات:</span>
+        <div id="emailTarget" class="email-text">michaelmelad0597@gmail.com</div>
+        <div class="btn-group">
+          <!-- زر فتح تطبيق البريد الآمن بدون أخطاء المسار -->
+          <button onclick="openMailClient()" class="btn-action">فتح تطبيق البريد ✉️</button>
+          <!-- زر نسخ الإيميل بضغطة زر -->
+          <button onclick="copyEmail()" id="copyBtn" class="btn-action btn-copy">نسخ البريد 📋</button>
+        </div>
+      </div>
     </div>
 
     <div class="card">
@@ -74,5 +89,27 @@
       جميع الحقوق محفوظة © تطبيق المكتبة 2026
     </div>
   </div>
+
+  <script>
+    const targetEmail = "michaelmelad0597@gmail.com";
+
+    function openMailClient() {
+      const subject = encodeURIComponent("طلب حذف حسابي من تطبيق المكتبة");
+      const body = encodeURIComponent("مرحباً، أرجو حذف حسابي وكافة بياناتي المرتبطة بهذا البريد الإلكتروني نهائياً من خوادم تطبيق المكتبة.");
+      window.location.href = `mailto:${targetEmail}?subject=${subject}&body=${body}`;
+    }
+
+    function copyEmail() {
+      navigator.clipboard.writeText(targetEmail).then(() => {
+        const btn = document.getElementById('copyBtn');
+        btn.innerText = "تم النسخ بنجاح! ✓";
+        btn.style.background = "#10B981";
+        setTimeout(() => {
+          btn.innerText = "نسخ البريد 📋";
+          btn.style.background = "#334155";
+        }, 2500);
+      });
+    }
+  </script>
 </body>
 </html>
