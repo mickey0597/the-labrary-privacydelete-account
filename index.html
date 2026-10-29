@@ -3,38 +3,49 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>حذف الحساب والبيانات | تطبيق المكتبة</title>
+  <title>سياسة الخصوصية وحذف الحساب | تطبيق المكتبة (The Library)</title>
   <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #1E88E5;
+      --primary-hover: #1565C0;
       --bg: #0B1120;
       --card-bg: #1E293B;
       --text: #F8FAFC;
       --text-muted: #94A3B8;
     }
     * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Cairo', sans-serif; }
-    body { background-color: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.6; }
-    .container { max-width: 750px; margin: 0 auto; }
-    .header { text-align: center; margin-bottom: 35px; }
-    .logo { font-size: 45px; margin-bottom: 10px; }
-    h1 { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 8px; }
+    body { background-color: var(--bg); color: var(--text); padding: 40px 20px; line-height: 1.7; scroll-behavior: smooth; }
+    .container { max-width: 800px; margin: 0 auto; }
+    .header { text-align: center; margin-bottom: 25px; }
+    .logo { font-size: 45px; margin-bottom: 8px; }
+    h1 { font-size: 26px; font-weight: 800; color: var(--primary); margin-bottom: 6px; }
     p.subtitle { color: var(--text-muted); font-size: 14px; }
-    .card { background: var(--card-bg); border-radius: 20px; padding: 25px; margin-bottom: 20px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
-    .card h2 { font-size: 17px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #fff; }
+    
+    /* شريط التنقل السريع */
+    .nav-tabs { display: flex; justify-content: center; gap: 10px; margin-bottom: 30px; flex-wrap: wrap; }
+    .nav-btn { background: #334155; color: #fff; text-decoration: none; padding: 10px 18px; border-radius: 12px; font-size: 13.5px; font-weight: 700; transition: 0.2s; border: 1px solid rgba(255,255,255,0.08); }
+    .nav-btn:hover, .nav-btn.active { background: var(--primary); }
+
+    .card { background: var(--card-bg); border-radius: 20px; padding: 25px; margin-bottom: 22px; border: 1px solid rgba(255,255,255,0.06); box-shadow: 0 10px 25px rgba(0,0,0,0.3); }
+    .card h2 { font-size: 17.5px; margin-bottom: 12px; display: flex; align-items: center; gap: 10px; color: #fff; }
+    .card h3 { font-size: 14.5px; color: #38BDF8; margin: 16px 0 8px 0; }
     .card p, .card li { font-size: 13.5px; color: var(--text-muted); }
     ul { list-style: none; padding-right: 0; }
     li { position: relative; padding-right: 22px; margin-bottom: 8px; }
     li::before { content: "✓"; position: absolute; right: 0; color: var(--primary); font-weight: bold; }
+    
     .email-box { background: rgba(0,0,0,0.25); padding: 14px; border-radius: 12px; margin-top: 14px; border: 1px dashed rgba(255,255,255,0.15); display: flex; flex-direction: column; gap: 10px; }
     .email-text { font-family: monospace; color: #38BDF8; font-size: 15px; direction: ltr; text-align: right; }
     .btn-group { display: flex; gap: 10px; flex-wrap: wrap; }
     .btn-action { display: inline-flex; align-items: center; gap: 6px; background: var(--primary); color: #fff; border: none; text-decoration: none; padding: 10px 18px; border-radius: 10px; font-weight: 700; font-size: 13px; cursor: pointer; transition: 0.2s; }
-    .btn-action:hover { background: #1565C0; }
+    .btn-action:hover { background: var(--primary-hover); }
     .btn-copy { background: #334155; }
     .btn-copy:hover { background: #475569; }
+    
     .badge-warn { background: rgba(239, 68, 68, 0.15); color: #EF4444; padding: 3px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 8px; }
-    .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; }
+    .badge-info { background: rgba(30, 136, 229, 0.15); color: #38BDF8; padding: 3px 10px; border-radius: 8px; font-size: 12px; font-weight: 700; display: inline-block; margin-bottom: 8px; }
+    .footer { text-align: center; color: var(--text-muted); font-size: 12px; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.06); }
   </style>
 </head>
 <body>
@@ -42,51 +53,92 @@
     <div class="header">
       <div class="logo">📚</div>
       <h1>تطبيق المكتبة (The Library)</h1>
-      <p class="subtitle">بوابة طلب حذف الحساب والبيانات الشخصية</p>
+      <p class="subtitle">بوابة سياسة الخصوصية الرسمية وحذف الحساب والبيانات</p>
     </div>
 
-    <div class="card">
-      <span class="badge-warn">الخيار الأول</span>
-      <h2>📱 الحذف الفوري من داخل التطبيق</h2>
-      <p>إذا كان التطبيق مثبتاً على هاتفك، يمكنك حذف حسابك في ثوانٍ معدودة:</p>
-      <br>
-      <ul>
-        <li>افتح التطبيق وسجل دخولك.</li>
-        <li>انتقل إلى شاشة <strong>(الملف الشخصي / حسابي)</strong>.</li>
-        <li>مرر لأسفل الشاشة واضغط على <strong>"حذف الحساب نهائياً"</strong>.</li>
-        <li>أكد الطلب، وسيتم مسح كافة بياناتك ورواياتك فوراً من السيرفر.</li>
-      </ul>
+    <!-- شريط التنقل السريع -->
+    <div class="nav-tabs">
+      <a href="#privacy" class="nav-btn">📄 سياسة الخصوصية</a>
+      <a href="#deletion" class="nav-btn">🗑️ طلب حذف الحساب</a>
     </div>
 
-    <div class="card">
-      <span class="badge-warn">الخيار الثاني</span>
-      <h2>📧 الحذف في حال قمت بإلغاء تثبيت التطبيق</h2>
-      <p>إذا حذفت التطبيق من جهازك، أرسل لنا رسالة من نفس البريد الإلكتروني المسجل به داخل التطبيق، وسيقوم فريق الدعم بحذف حسابك بالكامل خلال 48 ساعة:</p>
-      
-      <div class="email-box">
-        <span style="font-size: 12px; color: var(--text-muted);">البريد الإلكتروني المخصص للدعم وحذف البيانات:</span>
-        <div id="emailTarget" class="email-text">michaelmelad0597@gmail.com</div>
-        <div class="btn-group">
-          <!-- زر فتح تطبيق البريد الآمن بدون أخطاء المسار -->
-          <button onclick="openMailClient()" class="btn-action">فتح تطبيق البريد ✉️</button>
-          <!-- زر نسخ الإيميل بضغطة زر -->
-          <button onclick="copyEmail()" id="copyBtn" class="btn-action btn-copy">نسخ البريد 📋</button>
-        </div>
+    <!-- ======================================================== -->
+    <!-- قسم سياسة الخصوصية (المطلوب لمتجر جوجل) -->
+    <!-- ======================================================== -->
+    <div id="privacy">
+      <div class="card">
+        <span class="badge-info">وثيقة رسمية</span>
+        <h2>📄 سياسة الخصوصية (Privacy Policy)</h2>
+        <p>نحن في تطبيق <strong>"المكتبة (The Library)"</strong> نحترم خصوصيتك ونلتزم بحماية بياناتك الشخصية. توضح هذه الوثيقة كيفية جمع واستخدام وتأمين معلوماتك عند استخدامك لتطبيقنا على نظام Android.</p>
+        
+        <h3>1. المعلومات التي نجمعها:</h3>
+        <ul>
+          <li><strong>معلومات الحساب:</strong> الاسم المستعار، البريد الإلكتروني، والصورة الشخصية (تُستخدم فقط لإنشاء حسابك وإدارته داخل التطبيق).</li>
+          <li><strong>محتوى المستخدم:</strong> الروايات، المسودات، الفصول، والتعليقات التي تختار كتابتها ونشرها بمحض إرادتك داخل المنصة.</li>
+          <li><strong>بيانات الاستخدام:</strong> عدد مشاهدات الروايات، سجل القراءة، الشارات التقديرية، ورصيد المفاتيح المستخدم لفتح الفصول.</li>
+        </ul>
+
+        <h3>2. الخدمات والشركاء من الأطراف الثالثة (Third-Party Services):</h3>
+        <p>يعتمد التطبيق على خدمات موثوقة من أطراف ثالثة تلتزم بأعلى معايير حماية البيانات:</p>
+        <ul>
+          <li><strong>Google Firebase:</strong> لإدارة وتأمين قواعد البيانات السحابية (Firestore)، وتأكيد الحسابات (Firebase Auth)، وإرسال إشعارات الفصول الجديدة (FCM).</li>
+          <li><strong>Google AdMob:</strong> لعرض الإعلانات المدمجة وإعلانات المكافأة، وتخضع لسياسات خصوصية شركة Google.</li>
+          <li><strong>تسجيل الدخول الاجتماعي (Google & Facebook Sign-In):</strong> لتسهيل تسجيل الدخول الآمن دون مشاركة كلمات المرور الخاصة بك.</li>
+        </ul>
+
+        <h3>3. أمان البيانات وتشفيرها:</h3>
+        <p>يتم نقل وتشفير جميع البيانات الحساسة عبر بروتوكولات آمنة (HTTPS/SSL). نحن <strong>لا نبيع أو نؤجر</strong> بيانات المستخدمين الشخصية لأي جهة تجارية إطلاقاً.</p>
+
+        <h3>4. خصوصية الأطفال:</h3>
+        <p>تطبيقنا غير موجه للأطفال دون سن 13 عاماً، ولا نجمع عمداً أي بيانات شخصية تخص الأطفال.</p>
       </div>
     </div>
 
-    <div class="card">
-      <h2>🗑️ البيانات التي يتم حذفها نهائياً:</h2>
-      <ul>
-        <li>بيانات الملف الشخصي (الاسم، البريد الإلكتروني، الصورة الشخصية).</li>
-        <li>جميع الروايات المنشورة، المسودات، والفصول بالكامل.</li>
-        <li>رصيد المفاتيح الذهبية وسجل القراءة والشارات التقديرية.</li>
-        <li>التعليقات والمفضلات والإشعارات الخاصة بالحساب.</li>
-      </ul>
+    <!-- ======================================================== -->
+    <!-- قسم حذف الحساب (المطابق لشروط جوجل) -->
+    <!-- ======================================================== -->
+    <div id="deletion">
+      <div class="card">
+        <span class="badge-warn">الخيار الأول</span>
+        <h2>📱 الحذف الفوري من داخل التطبيق</h2>
+        <p>إذا كان التطبيق مثبتاً على هاتفك، يمكنك حذف حسابك في ثوانٍ معدودة وبشكل فوري:</p>
+        <br>
+        <ul>
+          <li>افتح التطبيق وسجل دخولك.</li>
+          <li>انتقل إلى شاشة <strong>(الملف الشخصي / حسابي)</strong>.</li>
+          <li>مرر لأسفل الشاشة واضغط على <strong>"حذف الحساب نهائياً"</strong>.</li>
+          <li>أكد الطلب، وسيتم مسح كافة بياناتك ورواياتك فوراً من السيرفر.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <span class="badge-warn">الخيار الثاني</span>
+        <h2>📧 الحذف في حال قمت بإلغاء تثبيت التطبيق</h2>
+        <p>إذا حذفت التطبيق من جهازك، أرسل لنا رسالة من نفس البريد الإلكتروني المسجل به داخل التطبيق، وسيقوم فريق الدعم بحذف حسابك بالكامل خلال 48 ساعة:</p>
+        
+        <div class="email-box">
+          <span style="font-size: 12px; color: var(--text-muted);">البريد الإلكتروني المخصص للدعم وحذف البيانات:</span>
+          <div id="emailTarget" class="email-text">michaelmelad0597@gmail.com</div>
+          <div class="btn-group">
+            <button onclick="openMailClient()" class="btn-action">فتح تطبيق البريد ✉️</button>
+            <button onclick="copyEmail()" id="copyBtn" class="btn-action btn-copy">نسخ البريد 📋</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2>🗑️ البيانات التي يتم حذفها نهائياً:</h2>
+        <ul>
+          <li>بيانات الملف الشخصي (الاسم، البريد الإلكتروني، الصورة الشخصية).</li>
+          <li>جميع الروايات المنشورة، المسودات، والفصول بالكامل.</li>
+          <li>رصيد المفاتيح الذهبية وسجل القراءة والشارات التقديرية.</li>
+          <li>التعليقات والمفضلات والإشعارات الخاصة بالحساب.</li>
+        </ul>
+      </div>
     </div>
 
     <div class="footer">
-      جميع الحقوق محفوظة © تطبيق المكتبة 2026
+      جميع الحقوق محفوظة © تطبيق المكتبة (The Library) 2026
     </div>
   </div>
 
